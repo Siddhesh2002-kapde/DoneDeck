@@ -11,28 +11,36 @@ const StickyWall = () => {
       <div id="task">
         <h1 className='text-5xl font-bold'>Sticky Wall</h1>
 
-        <div className="grid grid-rows-3 grid-cols-3">
+        <div className="grid grid-rows-3 grid-cols-3 ">
           {data.map((val, index) => (
-            <div
-              className={`container drop-shadow-xl h-72 w-80 my-10 mx-2 px-6 py-4 rounded-lg flex-col`}
-              style={{ backgroundColor: colors[index % colors.length] }}
-            >
-              <h1 className='text-2xl font-bold my-2'>{val.title}</h1>
-              <p>{val.description.slice(0,50)}</p>
-              
-                <button
-                  className='bg-red-500 px-3 py-3 rounded-xl my-10 mx-3'
-                  onClick={() => deleteTask(index)}
-                >
-                  Delete
-                </button>
-                {/* Link to Update Task */}
-                <Link to={`/update-task/${index}`} className="bg-blue-500 px-3 py-3 rounded-xl">
-                  Edit
-                </Link>
-              
+            <>
+              <div
+                className='drop-shadow-xl h-72 w-80 my-10   rounded-lg flex flex-col justify-between '
+                style={{ backgroundColor: colors[index % colors.length] }}
+              >
+                <div className='px-3'>
+                  <h1 className='text-2xl font-bold my-2 '>{val.title}</h1>
+                  <p className='px-3'>{val.description.slice(0, 50)}</p>
+                </div>
+                <div className='flex justify-between bg-gray-600 rounded-b-lg'>
+                  <button
+                    className='rounded-bl-lg pr-5 p-4 hover:bg-red-500 text-white'
+                    onClick={() => deleteTask(index)}
+                  >
+                    Delete
+                  </button>
 
-            </div>
+                  {/* Link to Update Task */}
+                  <Link
+                    to={`/update-task/${index}`}
+                    
+                  >
+                    <button className="pl-5 p-4 rounded-br-lg  hover:bg-green-500 text-white"> Edit</button>
+                  </Link>
+                </div>
+
+              </div>
+            </>
           ))}
 
           <div className="container drop-shadow-xl flex justify-center items-center bg-gray-200 h-72 w-80 my-10 mx-2 px-6 py-4 rounded-lg flex-col">
