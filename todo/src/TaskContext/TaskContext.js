@@ -18,8 +18,16 @@ export const AddTaskInDict = ({ children }) => {
         setData(updatedData);
     };
 
+    const updateTask = (index, updatedTask) => {
+        setData((prevData) => {
+            const newData = [...prevData];
+            newData[index] = updatedTask; // Update the specific task
+            return newData; // Return the updated data
+        });
+    };
+
     return (
-        <TaskContext.Provider value={{ data, addDictionary,deleteTask }}>
+        <TaskContext.Provider value={{ data, addDictionary,deleteTask,updateTask }}>
             {children}
         </TaskContext.Provider>
     )

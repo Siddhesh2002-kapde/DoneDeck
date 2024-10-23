@@ -8,6 +8,7 @@ import Upcoming from '../Upcoming/Upcoming';
 import StickyWall from '../StickyWall/StickyWall'
 import Tasks from '../Tasks/Tasks'
 import AddTask from '../AddTask/AddTask';
+import UpdateTask from '../UpdateTask/UpdateTask';
 const MainBody = () => {
     const [isVisible, setIsVisible] = useState(true);
 
@@ -50,6 +51,7 @@ const MainBody = () => {
             
             <Route path="/tasks" element={<StickyWall title = "" description = "" />} />
             <Route path="/AddTask" element={<AddTask fs = "5"/>} /> {/* Example for another component */}
+            <Route path="/update-task/:index" element={<UpdateTask/>} /> {/* Route for updating task */}
           </Routes>
           </div>
           

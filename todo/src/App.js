@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 import MainBody from './components/MainBody/MainBody';
-import { AddTaskInDict, TaskContext } from './TaskContext/TaskContext';
+import { AddTaskInDict } from './TaskContext/TaskContext';
+import UpdateTask from './components/UpdateTask/UpdateTask';
 
 
 function App() {
@@ -13,8 +14,12 @@ function App() {
     {/* passing the value */}
 
     <AddTaskInDict>
-      <MainBody />      
+      <MainBody />    
+ 
     </AddTaskInDict>
+
+
+
   
 
 
