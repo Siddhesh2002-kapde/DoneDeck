@@ -35,7 +35,7 @@ const StickyWall = () => {
                     to={`/update-task/${index}`}
                     
                   >
-                    <button className="pl-5 p-4 rounded-br-lg  hover:bg-green-500 text-white"> Edit</button>
+                    <button className="pl-10 text-center p-4 rounded-br-lg  hover:bg-green-500 text-white"> Edit</button>
                   </Link>
                 </div>
 
